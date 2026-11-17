@@ -1,0 +1,126 @@
+/* =========================================
+   LANDING PAGE (index.php)
+   Colours and fonts: css/theme.css
+========================================= */
+
+.hero-section {
+    display: flex;
+    min-height: calc(100vh - var(--em-nav-height));
+    padding: 24px 48px 48px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    align-items: center;
+    gap: 48px;
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+}
+
+.hero-text h1 {
+    margin: 10px 0 18px;
+    color: var(--em-green);
+    font-size: 68px;
+    font-weight: 800;
+    letter-spacing: -.03em;
+    line-height: .98;
+}
+
+.hero-text h1 span {
+    display: block;
+    color: var(--em-amber-600);
+    font-weight: 500;
+}
+
+.hero-text p {
+    max-width: 420px;
+    margin: 0 0 26px;
+    color: var(--em-muted);
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 18px;
+    border: 1px solid var(--em-border);
+    border-radius: var(--em-radius-sm);
+    background: var(--em-surface);
+    color: var(--em-text);
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: var(--em-surface-2);
+}
+
+.hero-points {
+    display: grid;
+    gap: 10px;
+    margin: 32px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hero-points li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--em-text);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.hero-points svg.lucide {
+    padding: 6px;
+    width: 30px;
+    height: 30px;
+    border-radius: 9px;
+    background: var(--em-green-50);
+    color: var(--em-green);
+}
+
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 760px;
+    height: auto;
+    border-radius: 28px;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        padding: 20px 16px 40px;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+}

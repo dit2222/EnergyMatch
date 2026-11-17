@@ -1,0 +1,247 @@
+/* =========================================
+   DASHBOARD
+   Shared pieces (ui-page, ui-card, ui-stat,
+   ui-btn, ui-badge) are in css/theme.css
+========================================= */
+
+/* welcome */
+
+.welcome-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 26px 28px;
+}
+
+.welcome-card h1 {
+    margin: 4px 0 4px;
+    color: var(--em-green);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1.2;
+}
+
+.welcome-card p {
+    color: var(--em-muted);
+}
+
+.welcome-card .ui-btn {
+    flex-shrink: 0;
+}
+
+/* key numbers */
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    gap: 16px;
+}
+
+/* your steps */
+
+.dashboard-steps {
+    padding: 24px 26px;
+}
+
+.dashboard-steps-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.dashboard-steps-header h2,
+.dashboard-help-header h2 {
+    color: var(--em-green);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.dashboard-steps-header p,
+.dashboard-help-header p {
+    color: var(--em-muted);
+    font-size: 14px;
+}
+
+.steps-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.step-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px;
+    border: 1px solid var(--em-border);
+    border-radius: 14px;
+    background: var(--em-surface);
+}
+
+.step-icon {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    background: var(--em-surface-2);
+    color: var(--em-muted);
+}
+
+.step-item strong {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.step-item p {
+    flex: 1;
+    color: var(--em-muted);
+    font-size: 13px;
+}
+
+.step-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--em-green-600);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.step-link svg.lucide {
+    width: 15px;
+    height: 15px;
+}
+
+.step-link:hover {
+    text-decoration: underline;
+}
+
+.step-item.is-done .step-icon {
+    background: var(--em-green-50);
+    color: var(--em-green-600);
+}
+
+.step-item.is-current {
+    border-color: var(--em-amber);
+    box-shadow: 0 0 0 3px var(--em-amber-50);
+}
+
+.step-item.is-current .step-icon {
+    background: var(--em-amber);
+    color: var(--em-on-amber);
+}
+
+/* help */
+
+.dashboard-help {
+    display: grid;
+    gap: 14px;
+    margin-top: 6px;
+}
+
+.dashboard-help-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.help-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 20px;
+    color: var(--em-text);
+    text-decoration: none;
+    transition: border-color .2s ease, transform .2s ease;
+}
+
+.help-card:hover {
+    border-color: #D9CFBB;
+    transform: translateY(-1px);
+}
+
+.help-card-icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 4px;
+    border-radius: 12px;
+    background: var(--em-green-50);
+    color: var(--em-green);
+}
+
+.help-card strong {
+    font-size: 16px;
+}
+
+.help-card small {
+    flex: 1;
+    color: var(--em-muted);
+    font-size: 14px;
+}
+
+.help-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--em-green-600);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.help-card-link svg.lucide {
+    width: 15px;
+    height: 15px;
+}
+
+/* tablets and phones */
+
+@media (max-width: 960px) {
+    .steps-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .welcome-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+    }
+
+    .welcome-card h1 {
+        font-size: 23px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .dashboard-stats .ui-stat-hero {
+        grid-column: 1 / -1;
+    }
+
+    .dashboard-steps {
+        padding: 18px;
+    }
+
+    .dashboard-steps-header .ui-badge {
+        display: none;
+    }
+
+    .steps-list,
+    .dashboard-help-cards {
+        grid-template-columns: 1fr;
+    }
+}

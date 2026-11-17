@@ -1,0 +1,692 @@
+/* =========================================
+   ENERGYMATCH - ADMIN COMMUNITIES
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: var(--em-font);
+    color: var(--em-text);
+
+    background: var(--em-bg);
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 22px 6%;
+
+    background: var(--em-surface);
+
+    box-shadow: var(--em-shadow);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    color: var(--em-green);
+
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo span {
+    margin-left: 8px;
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    background: var(--em-green-50);
+
+    color: var(--em-green);
+
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.nav-menu a {
+    color: var(--em-text);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: var(--em-green);
+}
+
+.logout {
+    padding: 10px 15px;
+
+    border-radius: 9px;
+
+    background: var(--em-danger-50);
+
+    color: var(--em-danger) !important;
+}
+
+.logout:hover {
+    background: var(--em-danger-50);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: min(
+        1350px,
+        calc(100% - 40px)
+    );
+
+    margin: 45px auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.page-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 24px;
+
+    padding: 30px;
+
+    border: 1px solid
+        var(--em-border);
+
+    border-radius: 20px;
+
+    background: var(--em-surface);
+
+    box-shadow: var(--em-shadow);
+}
+
+.page-label {
+    margin: 0 0 7px;
+
+    color: var(--em-green);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.page-header h1 {
+    margin: 0 0 10px;
+
+    color: var(--em-green);
+
+    font-size: 30px;
+}
+
+.page-header p {
+    margin-bottom: 0;
+
+    color: var(--em-muted);
+
+    line-height: 1.6;
+}
+
+.community-total {
+    min-width: 150px;
+
+    padding: 17px 22px;
+
+    border: 1px solid var(--em-border);
+
+    border-radius: 15px;
+
+    background: var(--em-green-50);
+
+    text-align: center;
+}
+
+.community-total span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: var(--em-muted);
+
+    font-size: 12px;
+}
+
+.community-total strong {
+    color: var(--em-green);
+
+    font-size: 31px;
+}
+
+
+/* =========================================
+   FILTERS
+========================================= */
+
+.filter-panel {
+    margin-bottom: 24px;
+
+    padding: 22px;
+
+    border: 1px solid var(--em-border);
+
+    border-radius: 17px;
+
+    background: var(--em-surface);
+
+    box-shadow: var(--em-shadow);
+}
+
+.filter-form {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 12px;
+}
+
+.filter-field {
+    min-width: 180px;
+}
+
+.search-field {
+    flex: 1;
+}
+
+.filter-field label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: var(--em-text);
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.filter-field input,
+.filter-field select {
+    width: 100%;
+
+    height: 42px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--em-border);
+
+    border-radius: 10px;
+
+    background: var(--em-surface);
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+.filter-field input:focus,
+.filter-field select:focus {
+    border-color: var(--em-green);
+
+    box-shadow: 0 0 0 3px
+        var(--em-green-50);
+}
+
+.filter-button,
+.clear-button {
+    height: 42px;
+
+    padding: 0 18px;
+
+    border: 0;
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+.filter-button {
+    background: var(--em-green);
+
+    color: white;
+}
+
+.filter-button:hover {
+    background: var(--em-green);
+}
+
+.clear-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--em-bg);
+
+    color: var(--em-text);
+}
+
+
+/* =========================================
+   PANEL
+========================================= */
+
+.communities-panel {
+    overflow: hidden;
+
+    border: 1px solid var(--em-border);
+
+    border-radius: 20px;
+
+    background: var(--em-surface);
+
+    box-shadow: var(--em-shadow);
+}
+
+.panel-heading {
+    padding: 25px 27px;
+
+    border-bottom: 1px solid var(--em-border);
+}
+
+.panel-heading h2 {
+    margin: 0 0 7px;
+
+    color: var(--em-green);
+
+    font-size: 21px;
+}
+
+.panel-heading p {
+    margin: 0;
+
+    color: var(--em-muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.communities-table {
+    width: 100%;
+
+    min-width: 1200px;
+
+    border-collapse: collapse;
+}
+
+.communities-table th {
+    padding: 14px 15px;
+
+    background: var(--em-green-50);
+
+    color: var(--em-muted);
+
+    font-size: 11px;
+
+    text-align: left;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+.communities-table td {
+    padding: 16px 15px;
+
+    border-bottom: 1px solid var(--em-border);
+
+    color: var(--em-muted);
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+.communities-table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.communities-table tbody tr:hover {
+    background: var(--em-green-50);
+}
+
+.communities-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.community-id {
+    color: var(--em-muted) !important;
+
+    font-weight: 700;
+}
+
+.community-name strong {
+    color: var(--em-text);
+}
+
+
+/* =========================================
+   CREATOR
+========================================= */
+
+.creator {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.creator strong {
+    color: var(--em-text);
+}
+
+.creator small {
+    color: var(--em-muted);
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.status-active {
+    background: var(--em-green-50);
+
+    color: var(--em-text);
+}
+
+.status-cancelled {
+    background: var(--em-bg);
+
+    color: var(--em-muted);
+}
+
+.status-rejected {
+    background: var(--em-danger-50);
+
+    color: var(--em-danger);
+}
+
+.status-other {
+    background: var(--em-amber-50);
+
+    color: var(--em-amber-600);
+}
+
+
+/* =========================================
+   COUNTS
+========================================= */
+
+.members-count {
+    display: inline-flex;
+
+    min-width: 32px;
+
+    height: 32px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: var(--em-green-50);
+
+    color: var(--em-green);
+
+    font-weight: 800;
+}
+
+.pending-count {
+    display: inline-flex;
+
+    min-width: 32px;
+
+    height: 32px;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: var(--em-amber-50);
+
+    color: var(--em-amber-600);
+
+    font-weight: 800;
+}
+
+.zero-value {
+    color: var(--em-muted);
+}
+
+.score {
+    color: var(--em-muted);
+}
+
+.needs {
+    display: inline-block;
+
+    padding: 6px 9px;
+
+    border-radius: 8px;
+
+    background: var(--em-bg);
+
+    color: var(--em-muted);
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   EMPTY / ERROR
+========================================= */
+
+.empty-state {
+    padding: 55px 25px;
+
+    text-align: center;
+}
+
+.empty-icon {
+    margin-bottom: 10px;
+
+    font-size: 36px;
+}
+
+.empty-state h3 {
+    margin-bottom: 7px;
+
+    color: var(--em-text);
+}
+
+.empty-state p {
+    color: var(--em-muted);
+}
+
+.error-box {
+    margin-bottom: 20px;
+
+    padding: 14px 17px;
+
+    border: 1px solid var(--em-border);
+
+    border-radius: 12px;
+
+    background: var(--em-danger-50);
+
+    color: var(--em-danger);
+}
+.view-community-btn {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    background: var(--em-green);
+    color: var(--em-surface);
+
+    border-radius: 7px;
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.view-community-btn:hover {
+    background: var(--em-text);
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    padding: 35px;
+
+    color: var(--em-muted);
+
+    font-size: 13px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .page-header {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .community-total {
+        width: 100%;
+    }
+
+    .filter-form {
+        align-items: stretch;
+
+        flex-direction: column;
+    }
+
+    .filter-field {
+        width: 100%;
+    }
+
+    .filter-button,
+    .clear-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .container {
+        width: calc(100% - 24px);
+
+        margin-top: 25px;
+    }
+
+    .page-header {
+        padding: 23px;
+    }
+
+    .page-header h1 {
+        font-size: 25px;
+    }
+
+    .nav-menu {
+        justify-content: center;
+
+        gap: 13px;
+    }
+}
+/* Minimum fairness margin (Fair Share − Minimum Share) */
+.margin-positive {
+    color: var(--em-green);
+}
+
+.margin-negative {
+    color: var(--em-danger);
+}

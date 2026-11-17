@@ -1,0 +1,427 @@
+/* =========================================================
+   SIGN IN + REGISTER (sign_in.php, register_form.php)
+   Green panel on the left, form on the right.
+   Colours and fonts: css/theme.css
+========================================================= */
+
+.auth-shell {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    min-height: calc(100vh - var(--em-nav-height));
+}
+
+/* ---------- green side panel ---------- */
+
+.auth-side {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    overflow: hidden;
+    padding: 56px 56px 44px;
+    background: var(--em-green);
+    color: #FFFFFF;
+}
+
+.auth-side::after {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(242, 169, 59, .55) 0, rgba(242, 169, 59, .18) 45%, transparent 70%);
+}
+
+.auth-side > * {
+    position: relative;
+    z-index: 1;
+}
+
+.auth-side-eyebrow {
+    color: #F6C77D;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.auth-side h2 {
+    max-width: 420px;
+    margin: 10px 0 12px;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+}
+
+.auth-side p {
+    max-width: 420px;
+    margin: 0;
+    color: rgba(255, 255, 255, .78);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.auth-points {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.auth-points li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.auth-points li span {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .10);
+    color: #F6C77D;
+}
+
+/* ---------- form side ---------- */
+
+.auth-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 460px;
+}
+
+.auth-card h1 {
+    margin: 0;
+    color: var(--em-green);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -.02em;
+}
+
+.auth-lead {
+    margin: 6px 0 24px;
+    color: var(--em-muted);
+}
+
+.auth-error {
+    margin-bottom: 18px;
+    padding: 12px 15px;
+    border: 1px solid #EBC9C1;
+    border-radius: 12px;
+    background: var(--em-danger-50);
+    color: var(--em-danger);
+    font-weight: 600;
+}
+
+.auth-error[hidden] {
+    display: none;
+}
+
+/* fields */
+
+.auth-field {
+    display: grid;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.auth-field label {
+    color: var(--em-text);
+    font-size: 13.5px;
+    font-weight: 700;
+}
+
+.auth-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 48px;
+    padding: 0 6px 0 14px;
+    border: 1px solid var(--em-border);
+    border-radius: 12px;
+    background: var(--em-surface);
+    color: var(--em-muted);
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.auth-input:focus-within {
+    border-color: var(--em-green-600);
+    box-shadow: 0 0 0 3px var(--em-green-50);
+    color: var(--em-green);
+}
+
+.auth-input input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: none;
+    color: var(--em-text);
+    font-family: var(--em-font);
+    font-size: 15px;
+}
+
+.auth-eye {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 9px;
+    background: none;
+    color: var(--em-muted);
+    cursor: pointer;
+}
+
+.auth-eye:hover {
+    background: var(--em-surface-2);
+    color: var(--em-text);
+}
+
+.auth-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0 14px;
+}
+
+.auth-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 4px 0 20px;
+    font-size: 14px;
+}
+
+.auth-options a {
+    color: var(--em-green-600);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.auth-check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--em-text);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.auth-check input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: var(--em-green);
+}
+
+.auth-terms {
+    margin: 4px 0 20px;
+}
+
+.auth-submit {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+}
+
+.auth-switch {
+    margin: 18px 0 0;
+    color: var(--em-muted);
+    font-size: 14px;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: var(--em-green-600);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* ---------- register: two steps ---------- */
+
+.auth-progress {
+    display: none;
+}
+
+.auth-steps-form.is-stepped .auth-progress {
+    display: flex;
+    gap: 10px;
+    margin: 18px 0 22px;
+}
+
+.auth-progress-step {
+    flex: 1;
+    color: var(--em-muted);
+    font-size: 12.5px;
+    font-weight: 700;
+}
+
+.auth-progress-bar {
+    display: block;
+    height: 6px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+    background: var(--em-surface-2);
+}
+
+.auth-progress-step.is-current {
+    color: var(--em-green);
+}
+
+.auth-progress-step.is-current .auth-progress-bar {
+    background: var(--em-amber);
+}
+
+/* without JavaScript both steps are shown */
+.auth-steps-form:not(.is-stepped) {
+    margin-top: 22px;
+}
+
+.auth-steps-form:not(.is-stepped) [data-next-step],
+.auth-steps-form:not(.is-stepped) [data-previous-step] {
+    display: none;
+}
+
+.auth-step[hidden] {
+    display: none;
+}
+
+.auth-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-actions .ui-btn-ghost {
+    flex-shrink: 0;
+    height: 50px;
+}
+
+/* ---------- phones and tablets ---------- */
+
+@media (max-width: 900px) {
+    .auth-shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .auth-side {
+        gap: 0;
+        padding: 26px 20px;
+    }
+
+    .auth-side h2 {
+        font-size: 24px;
+    }
+
+    .auth-side p {
+        font-size: 14px;
+    }
+
+    .auth-points {
+        display: none;
+    }
+
+    .auth-main {
+        align-items: flex-start;
+        padding: 26px 16px 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .auth-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------- success message + forgot / reset password ---------- */
+
+.auth-success {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.auth-success {
+    border: 1px solid #BFDCCB;
+    background: var(--em-green-50);
+    color: var(--em-green);
+}
+
+.auth-success > svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 1px;
+}
+
+.auth-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    color: var(--em-green-600);
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.auth-back svg {
+    width: 16px;
+    height: 16px;
+}
+
+.auth-hint {
+    color: var(--em-muted);
+    font-size: 12.5px;
+}
+
+.auth-card h1 + .auth-error {
+    margin-top: 16px;
+}
+
+/* Username / e-mail check while typing */
+.auth-availability {
+    display: block;
+    font-size: 12.5px;
+    min-height: 0;
+}
+
+.auth-availability:empty {
+    display: none;
+}
+
+.auth-availability[data-state="checking"] {
+    color: var(--em-muted);
+}
+
+.auth-availability[data-state="ok"] {
+    color: var(--em-green);
+}
+
+.auth-availability[data-state="error"] {
+    color: var(--em-danger);
+    font-weight: 600;
+}

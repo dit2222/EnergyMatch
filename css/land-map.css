@@ -1,0 +1,58 @@
+.land-map-section {
+    margin-top: 24px;
+    padding: 20px;
+    background: var(--em-surface);
+    border: 1px solid var(--em-border);
+    border-radius: 14px;
+}
+.land-map-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 14px;
+}
+.land-map-heading h4 {
+    margin: 0 0 5px;
+    color: var(--em-green);
+    font-size: 18px;
+}
+.land-map-heading p {
+    margin: 0;
+    color: var(--em-muted);
+    font-size: 14px;
+    line-height: 1.5;
+}
+.land-map {
+    width: 100%;
+    height: 380px;
+    border: 1px solid var(--em-border);
+    border-radius: 12px;
+    overflow: hidden;
+    z-index: 1;
+}
+.map-selected-point {
+    min-height: 20px;
+    margin-top: 10px;
+    color: var(--em-green-600);
+    font-size: 13px;
+    font-weight: 700;
+}
+@media (max-width: 700px) {
+    .land-map-heading { align-items: flex-start; flex-direction: column; }
+    .land-map { height: 320px; }
+}
+
+/* Automatic location status (geocoding) */
+.map-geocode-status {
+    min-height: 18px;
+    margin-top: 4px;
+    color: var(--em-muted);
+    font-size: 13px;
+}
+.map-geocode-status.success {
+    color: var(--em-green-600);
+}
+.map-geocode-status.error {
+    color: var(--em-danger);
+}

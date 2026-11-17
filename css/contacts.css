@@ -1,0 +1,240 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--em-font);
+    background: var(--em-bg);
+}
+
+/* =============================
+   HERO
+============================= */
+
+.hero-section {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--em-bg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 30px 60px;
+}
+
+/* =============================
+   CONTACT CONTAINER
+============================= */
+
+.contact-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background: var(--em-surface);
+    border-radius: 30px;
+    padding: 50px;
+    box-shadow: var(--em-shadow);
+}
+
+/* =============================
+   HEADER
+============================= */
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.contact-header h1 {
+    font-size: 42px;
+    color: var(--em-green);
+    margin-bottom: 12px;
+}
+
+.contact-header p {
+    color: var(--em-muted);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* =============================
+   CONTENT
+============================= */
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* =============================
+   CONTACT INFO
+============================= */
+
+.contact-info h2,
+.contact-form-card h2 {
+    color: var(--em-green);
+    font-size: 27px;
+    margin-bottom: 18px;
+}
+
+.contact-info > p {
+    color: var(--em-muted);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    margin-bottom: 18px;
+    background: var(--em-bg);
+    border-radius: 18px;
+    border: 1px solid var(--em-border);
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--em-shadow);
+}
+
+.info-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--em-green-50);
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.info-card h3 {
+    color: var(--em-green);
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.info-card p {
+    color: var(--em-muted);
+    font-size: 14px;
+}
+
+/* =============================
+   FORM
+============================= */
+
+.contact-form-card {
+    background: var(--em-bg);
+    padding: 30px;
+    border-radius: 22px;
+    border: 1px solid var(--em-border);
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    color: var(--em-text);
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background: var(--em-surface);
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: var(--em-green-600);
+}
+
+.input-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+/* =============================
+   FORM MESSAGES
+============================= */
+
+.contact-success {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border: 1px solid var(--em-border);
+    border-radius: 10px;
+    background: var(--em-green-50);
+    color: var(--em-green);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.contact-error {
+    margin-bottom: 20px;
+    padding: 14px 16px;
+    border: 1px solid var(--em-border);
+    border-radius: 10px;
+    background: var(--em-danger-50);
+    color: var(--em-danger);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =============================
+   SEND BUTTON
+============================= */
+
+.send-btn {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 14px;
+    background: var(--em-green);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.send-btn:hover {
+    background: var(--em-green);
+    transform: translateY(-2px);
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+
+@media (max-width: 800px) {
+    .hero-section {
+        padding: 20px;
+    }
+
+    .contact-container {
+        padding: 30px 20px;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-header h1 {
+        font-size: 34px;
+    }
+}

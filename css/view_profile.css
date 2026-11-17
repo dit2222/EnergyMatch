@@ -1,0 +1,502 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    font-family: var(--em-font);
+    background: var(--em-bg);
+    color: var(--em-text);
+}
+
+a {
+    text-decoration: none;
+}
+
+.hero-section {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--em-bg);
+    padding: 30px 60px 70px;
+}
+
+.profile-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    color: var(--em-green);
+    font-size: 16px;
+    font-weight: 700;
+    transition: .25s ease;
+}
+
+.back-link:hover {
+    gap: 12px;
+}
+
+.profile-header-card,
+.summary-card,
+.contributions-section,
+.details-card {
+    width: 100%;
+    background: var(--em-surface);
+    border-radius: 25px;
+    box-shadow: var(--em-shadow);
+}
+
+.profile-header-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 45px;
+    border-radius: 30px;
+}
+
+.profile-main-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--em-green);
+    border: 8px solid var(--em-border);
+    color: var(--em-surface);
+    font-size: 32px;
+    font-weight: 700;
+    box-shadow: var(--em-shadow);
+}
+
+.profile-label,
+.small-title {
+    margin-bottom: 6px;
+    color: var(--em-muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-name-area h1 {
+    margin-bottom: 10px;
+    color: var(--em-green);
+    font-size: 38px;
+}
+
+.profile-location {
+    color: var(--em-muted);
+    font-size: 17px;
+}
+
+.profile-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    padding: 13px 18px;
+    border-radius: 20px;
+    background: var(--em-green-50);
+    color: var(--em-green);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.status-circle {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--em-green-600);
+    box-shadow: 0 0 0 5px rgba(76, 175, 80, .15);
+}
+
+.summary-card,
+.contributions-section,
+.details-card {
+    margin-top: 30px;
+    padding: 35px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--em-border);
+}
+
+.section-heading h2 {
+    color: var(--em-green);
+    font-size: 23px;
+}
+
+.section-icon {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: var(--em-green-50);
+    font-size: 25px;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.summary-item,
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px;
+    background: var(--em-green-50);
+    border: 1px solid var(--em-border);
+    border-radius: 18px;
+}
+
+.summary-icon,
+.detail-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 14px;
+    background: var(--em-surface);
+    font-size: 22px;
+    box-shadow: var(--em-shadow);
+}
+
+.summary-item p,
+.detail-item p {
+    margin-bottom: 6px;
+    color: var(--em-muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.summary-item strong {
+    color: var(--em-green);
+    font-size: 19px;
+}
+
+.fair-share-note {
+    margin-top: 20px;
+    padding: 16px 18px;
+    border: 1px solid var(--em-border);
+    border-radius: 14px;
+    background: var(--em-green-50);
+    color: var(--em-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.contribution-card {
+    padding: 25px;
+    border: 1px solid var(--em-border);
+    border-radius: 20px;
+    background: var(--em-bg);
+    transition: .25s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--em-shadow);
+}
+
+.contribution-card-header {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--em-border);
+}
+
+.contribution-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: var(--em-green-50);
+    font-size: 24px;
+}
+
+.contribution-card h3 {
+    color: var(--em-green);
+    font-size: 19px;
+}
+
+.value-badge {
+    min-width: 125px;
+    padding: 10px 13px;
+    border-radius: 14px;
+    background: var(--em-green-50);
+    text-align: right;
+}
+
+.value-badge span {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--em-muted);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.value-badge strong {
+    color: var(--em-green);
+    font-size: 16px;
+}
+
+.contribution-details {
+    display: grid;
+    gap: 10px;
+}
+
+.contribution-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 11px 13px;
+    border-radius: 12px;
+    background: var(--em-surface);
+}
+
+.contribution-detail span {
+    color: var(--em-muted);
+    font-size: 13px;
+}
+
+.contribution-detail strong {
+    color: var(--em-text);
+    font-size: 14px;
+    text-align: right;
+}
+
+.empty-contributions {
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.empty-icon {
+    margin-bottom: 12px;
+    font-size: 35px;
+}
+
+.empty-contributions h3 {
+    margin-bottom: 8px;
+    color: var(--em-green);
+}
+
+.empty-contributions p {
+    color: var(--em-muted);
+    line-height: 1.6;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.detail-item h3 {
+    color: var(--em-text);
+    font-size: 18px;
+}
+
+.description-area {
+    margin-top: 20px;
+    padding: 25px;
+    border: 1px solid var(--em-border);
+    border-radius: 18px;
+    background: var(--em-bg);
+}
+
+.description-area h3 {
+    margin-bottom: 12px;
+    color: var(--em-green);
+    font-size: 18px;
+}
+
+.description-area p {
+    color: var(--em-muted);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    padding: 12px 28px;
+    border-radius: 16px;
+    font-weight: 700;
+    transition: .25s ease;
+}
+
+.primary-btn {
+    background: var(--em-green);
+    color: var(--em-surface);
+}
+
+.primary-btn:hover {
+    background: var(--em-green);
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: var(--em-surface);
+    color: var(--em-green);
+    border: 1px solid var(--em-border);
+}
+
+.secondary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--em-shadow);
+}
+
+@media (max-width: 900px) {
+    .hero-section {
+        padding: 25px 30px 60px;
+    }
+
+    .profile-header-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .summary-grid,
+    .contribution-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .hero-section {
+        padding: 22px 18px 50px;
+    }
+
+    .profile-header-card,
+    .summary-card,
+    .contributions-section,
+    .details-card {
+        padding: 25px 21px;
+    }
+
+    .profile-main-info {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .profile-avatar {
+        width: 85px;
+        height: 85px;
+        font-size: 27px;
+    }
+
+    .profile-name-area h1 {
+        font-size: 30px;
+    }
+
+    .profile-status {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contribution-card-header {
+        grid-template-columns: auto 1fr;
+    }
+
+    .value-badge {
+        grid-column: 1 / -1;
+        text-align: left;
+    }
+
+    .contribution-detail {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .contribution-detail strong {
+        text-align: left;
+    }
+
+    .profile-buttons {
+        align-items: stretch;
+        flex-direction: column-reverse;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+    }
+}
+
+/* Read-only map of the land plot */
+.view-land-map {
+    height: 220px;
+    margin: 14px 0 4px;
+    border-radius: 14px;
+    border: 1px solid var(--em-border);
+    overflow: hidden;
+    z-index: 0;
+}
